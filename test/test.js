@@ -105,9 +105,21 @@ function getBookDetails(callback) {
       should.exist(res.body.bookDetail);
       should(res.body.bookDetail).be.an.Object();
       should(res.body.bookDetail).not.be.an.Array();
+      should(res.body.bookDetail.bookName).be.a.String();
+      should(res.body.bookDetail.price).be.a.Number();
+      should(res.body.bookDetail.language).be.a.String();
+      should(res.body.bookDetail.numOfPages).be.a.Number();
+      should(res.body.bookDetail.binding).be.a.String();
+      should(res.body.bookDetail.totalRating).be.a.Number();
+      should(res.body.bookDetail.totalCustomersRated).be.a.Number();
+      should(res.body.bookDetail.stock).be.a.Number();
+
       should.exist(res.body.bookDetail.authorDetails);
       should(res.body.bookDetail.authorDetails).be.an.Object();
       should(res.body.bookDetail.authorDetails).not.be.an.Array();
+      should(res.body.bookDetail.authorDetails.authorName).be.a.String();
+      should(res.body.bookDetail.authorDetails.age).be.a.Number();
+      should(res.body.bookDetail.authorDetails.numberOfBooks).be.a.Number();
       callback();
 
     });
