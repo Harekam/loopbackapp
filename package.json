@@ -4,8 +4,7 @@
   "main": "server/server.js",
   "scripts": {
     "start": "node .",
-    "pretest": "eslint .",
-    "posttest": "nsp check"
+    "test": "mocha"
   },
   "dependencies": {
     "async": "^2.0.1",
