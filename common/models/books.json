@@ -1,0 +1,70 @@
+{
+  "name": "books",
+  "plural": "books",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "strict": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "bookName": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "number",
+      "required": true
+    },
+    "releaseDate": {
+      "type": "date",
+      "required": true
+    },
+    "language": {
+      "type": "string",
+      "required": true
+    },
+    "numOfPages": {
+      "type": "number",
+      "required": true
+    },
+    "binding": {
+      "type": "string",
+      "required": true
+    },
+    "totalRating": {
+      "type": "number",
+      "default": 0
+    },
+    "totalCustomersRated": {
+      "type": "number",
+      "default": 0
+    },
+    "isDeleted": {
+      "type": "boolean",
+      "default": false
+    },
+    "updatedAt": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "addedAt": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "stock": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "authors": {
+      "type": "belongsTo",
+      "model": "authors",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

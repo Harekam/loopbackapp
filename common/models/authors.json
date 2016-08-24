@@ -1,0 +1,44 @@
+{
+  "name": "authors",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "authorName": {
+      "type": "string",
+      "required": true
+    },
+    "age": {
+      "type": "number",
+      "required": true
+    },
+    "numberOfBooks": {
+      "type": "number",
+      "required": true
+    },
+    "updatedAt": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "addedAt": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "isDeleted": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "books": {
+      "type": "hasMany",
+      "model": "books",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
